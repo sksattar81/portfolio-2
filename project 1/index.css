@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+	min-height: 100vh;
+	width: 100vw;
+	/* background-color: conic-gradient(red, yellow, green, blue, black); */
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	background-color: #66c7bf;
+
+}
+
+
+
+
+
+.container{
+    width: 100%;
+    height: 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: black ;
+    /* position: fixed; */
+    /* margin-bottom: 2rem; */
+    
+}
+
+.logo{
+   color: white;
+ font-size: xx-large;
+}
+
+.menu{
+    display: flex;
+ 
+}
+
+.menu li{
+    padding-right: 40px;
+}
+
+.menu li a{ 
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition-duration: 0.20s;
+    transition-timing-function: ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+
+
+
+.menu li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: 0.20s ease-in-out;
+ }
+
+
+ .menu li a:hover::after{
+   
+    width: 100%;
+	
+    
+ }
+ .open-menu,.close-menu{
+    position: absolute;
+    color: rgba(250, 255, 254, 0.989);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+
+ }
+
+.open-menu{
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+
+ }
+
+ .close-menu{
+    top: 20px;
+    right: 20px;
+
+ }
+
+ #check{
+    display: none;
+ }
+ /* main section */
+
+ /* responsive in header section */
+
+ @media(max-width: 500px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: rgba(11, 7, 5, 0.806);
+        transition: all 0.3s ease-in-out;
+    }
+    .menu li{
+        margin-top: 40px;
+    }
+	
+
+    .menu li a{
+        padding: 10px;
+    }
+    .open-menu,.close-menu{
+        display: block;
+        
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+
+    .contact .right form .fields {
+		flex-direction: column;
+	}
+    .contact .right form .name,
+	.contact .right form .email {
+		margin: 0;
+	}
+    .right{
+        width: 150px;
+    }
+ }
+
+
+ 
